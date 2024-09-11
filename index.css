@@ -1,0 +1,10 @@
+#content {
+    display: flex;
+}
+
+.task {
+    display: grid;
+    grid-template-rows: 1fr 5fr 1fr 1fr;
+    height: 300px;
+    margin: 8px;
+}

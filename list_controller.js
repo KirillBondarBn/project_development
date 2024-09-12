@@ -74,23 +74,23 @@ function export_tasks() {
 }
 
 function import_tasks(event) {
-    var file = event.target.files[0]; // Получение выбранного файла
+    var file = event.target.files[0]; 
 
     if (file) {
         var reader = new FileReader();
 
         reader.onload = function(e) {
             try {
-                var tasks = JSON.parse(e.target.result); // Парсинг JSON
+                var tasks = JSON.parse(e.target.result);
                 tasks.forEach(taskData => {
-                    create_task_from_data(taskData); // Создание задач из данных
+                    create_task_from_data(taskData);
                 });
             } catch (error) {
                 console.error("Error parsing JSON:", error);
             }
         };
 
-        reader.readAsText(file); // Чтение содержимого файла
+        reader.readAsText(file); файла
     }
 }
 
@@ -125,7 +125,7 @@ function create_task_from_data(taskData) {
     status.appendChild(notReady);
     status.appendChild(done);
 
-    // Установка статуса задачи
+    
     status.value = taskData.status;
 
     task.appendChild(title);
